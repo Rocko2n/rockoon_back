@@ -1,11 +1,15 @@
 package com.rockoon.domain.ticket.dto;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class TicketRequest {
-
-    private Long userId;
-
+    private Long memberId;
     private Long guestId;
 }

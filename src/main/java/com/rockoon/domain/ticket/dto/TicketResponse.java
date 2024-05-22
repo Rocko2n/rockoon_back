@@ -1,20 +1,20 @@
 package com.rockoon.domain.ticket.dto;
 
-import com.rockoon.domain.ticket.entity.Guest;
-import com.rockoon.domain.ticket.entity.User;
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class TicketResponse {
     private Long id;
-    private User user;
-    private Guest guest;
-    private LocalDateTime issuedAt;
+    private Long memberId;
+    private Long guestId;
+    private LocalDateTime createdAt;
     private boolean used;
 }

@@ -8,7 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/tickets")
+@RequestMapping("/api/tickets")
 @RequiredArgsConstructor
 public class TicketController {
 
@@ -20,9 +20,9 @@ public class TicketController {
         return ResponseEntity.ok(ticketResponse);
     }
 
-    @PostMapping("/{id}/use")
-    public ResponseEntity<Void> useTicket(@PathVariable Long id) {
-        ticketService.useTicket(id);
+    @PatchMapping("/{ticketId}/use")
+    public ResponseEntity<Void> useTicket(@PathVariable Long ticketId) {
+        ticketService.useTicket(ticketId);
         return ResponseEntity.ok().build();
     }
 }

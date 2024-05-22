@@ -3,7 +3,6 @@ package com.rockoon.domain.ticket.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
 
 @Entity
 @Getter
@@ -12,12 +11,17 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Guest {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
-    private String email;
+    @ManyToOne
+    @JoinColumn(name = "member_id")
+    private Member member;
+
+    @ManyToOne
+    @JoinColumn(name = "board_id")
+    private Board board;
 }
