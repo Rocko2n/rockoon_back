@@ -12,12 +12,14 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Board {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
+    @ManyToOne
+    @JoinColumn(name = "board_id")
+    private Board board;
 
-    @OneToMany(mappedBy = "board", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Guest> guests;
+    private String guestInfo;
 }
