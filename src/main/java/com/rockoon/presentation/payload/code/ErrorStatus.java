@@ -34,7 +34,10 @@ public enum ErrorStatus implements BaseCode{
 
     //게스트 관련 오류(4200 ~ 4249)
     GUEST_NOT_FOUND(NOT_FOUND, 4200, "존재하지 않는 게스트입니다."),
-    GUEST_ONLY_CAN_BE_TOUCHED_BY_CREATOR(BAD_REQUEST, 4201, "작성자가 아닌 유저는 게스트를 수정할 수 없습니다.");
+    GUEST_ONLY_CAN_BE_TOUCHED_BY_CREATOR(BAD_REQUEST, 4201, "작성자가 아닌 유저는 게스트를 수정할 수 없습니다."),
+
+    //티켓 관련 오류(4250 ~ 4300)
+    TICKET_NOT_FOUND(NOT_FOUND, 4250, "존재하지 않는 티켓입니다.");
 
     private final HttpStatus httpStatus;
     private final Integer code;
